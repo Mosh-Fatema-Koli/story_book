@@ -33,10 +33,7 @@ List<GetPage> getPages = [
     name: catagories,
     page: () =>CatPage(),
   ),
-  GetPage(
-    name: catagoriesdtls,
-    page: () => Catdtls(),
-  ),
+ 
   GetPage(
     name: profile,
     page: () => Profile(),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:story_book/All%20Screen/Home/newarrivel.dart';
 
 class Catdtls extends StatefulWidget {
-  const Catdtls({super.key});
+
+  var _catagorisbook;
+  Catdtls(this._catagorisbook);
+
 
   @override
   State<Catdtls> createState() => _CatdtlsState();
