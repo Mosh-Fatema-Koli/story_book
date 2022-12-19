@@ -39,6 +39,9 @@ dependencies:
   google_fonts:
   get:
   gap:
+
+
+  
   firebase_auth: ^4.2.0
   firebase_core:
   cloud_firestore: ^4.2.0

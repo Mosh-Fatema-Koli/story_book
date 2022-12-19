@@ -1,11 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:story_book/All%20Screen/Cat/catdtls.dart';
-import 'package:story_book/All%20Screen/Home/home.dart';
-import 'package:story_book/Auth/login.dart';
-import 'package:story_book/nav.dart';
-import 'package:story_book/splash.dart';
+import 'package:story_book/Route/route.dart';
+import 'package:story_book/Route/splash.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,8 +31,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-    
-      home: NavScreen(),
+
+      initialRoute: splash,
+      getPages: getPages,
+      home: SplashPage(),
       debugShowCheckedModeBanner: false,
     );
   }

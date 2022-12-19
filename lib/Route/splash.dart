@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:story_book/All%20Screen/Home/home.dart';
 import 'package:story_book/Auth/login.dart';
+import 'package:story_book/Auth/tree.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -15,9 +16,9 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 5), () => Get.to(LoginPage()));
+    Future.delayed(Duration(seconds: 5), () => Get.to(WidgetTree()));
     return Scaffold(
-      backgroundColor: Colors.black,
+     
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

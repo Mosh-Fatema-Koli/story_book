@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -10,6 +11,10 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
+  signOut() async {
+    await FirebaseAuth.instance.signOut();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,7 +117,9 @@ class _ProfileState extends State<Profile> {
                   ),
                   SizedBox(width: 10,),
 
-                  MaterialButton(onPressed: (){},
+                  MaterialButton(onPressed: (){
+                   signOut();
+                  },
                   child: Text("Logout"),
                   color: Colors.red,
                   

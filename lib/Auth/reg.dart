@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -16,12 +17,32 @@ class _RegPageState extends State<RegPage> {
 
     TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+
+  signUp() async{
+
+    try {
+          final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+            email: emailController.text,
+            password: passwordController.text,
+          );
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'weak-password') {
+            print('The password provided is too weak.');
+          } else if (e.code == 'email-already-in-use') {
+            print('The account already exists for that email.');
+          }
+        } catch (e) {
+          print(e);
+        }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       resizeToAvoidBottomInset: false,
       body: Center(
         child: Container(height: 400,
-             width: 400,
+             width: 300,
              decoration: BoxDecoration(
                         color:Color.fromARGB(255, 1, 12, 75),
                         borderRadius: BorderRadius.circular(10)
@@ -55,9 +76,9 @@ class _RegPageState extends State<RegPage> {
            ),
            ElevatedButton(
              onPressed: () {
-              
+              signUp();
              },
-             child: Text("Sign UP"),
+             child: Text("Sign Up"),
            ),
            SizedBox(
              height: 5,

@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:get/get.dart';
 import 'package:story_book/Auth/reg.dart';
 import 'package:story_book/widget/customtextfield.dart';
@@ -16,10 +16,26 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  SignIN() async {
 
+    try {
+        final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text,
+        );
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+          print('No user found for that email.');
+        } else if (e.code == 'wrong-password') {
+          print('Wrong password provided for that user.');
+        }
+      }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
           Stack(
@@ -51,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
               
               child: Center(
                 child: Container(height: 400,
-                width: 400,
+                width: 300,
                 decoration: BoxDecoration(
                            color:Color.fromARGB(255, 1, 12, 75),
                            borderRadius: BorderRadius.circular(10)
@@ -85,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                 
+                 SignIN();
                 },
                 child: Text("Log In"),
               ),
