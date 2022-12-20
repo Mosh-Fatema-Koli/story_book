@@ -23,16 +23,24 @@ class NewArrivelScreen extends StatelessWidget {
           mainAxisSpacing: 2.0
       ),
       itemBuilder: (BuildContext context, int index){
+
+        final DocumentSnapshot documentSnapshot = snapshot.data!.docs[index];
+
         return Padding(
           padding: const EdgeInsets.all(15),
           child: GestureDetector(
             onTap: () {
-              Get.to(Catdtls(snapshot.data!.docs[index]));
+              Get.to(Catdtls( documentSnapshot: documentSnapshot,));
             },
             child: Container(
               height: 200,
               color: Colors.amber,
-             child: Image.network(snapshot.data!.docs[index]['image'],fit: BoxFit.cover,),
+             child: Column(
+               children: [
+                 Image.network(documentSnapshot['image'],fit: BoxFit.cover,),
+                 Center(child: Text(documentSnapshot["name"])),
+               ],
+             ),
             ),
           ),
         );

@@ -1,21 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_book/All%20Screen/Home/newarrivel.dart';
 
-class Catdtls extends StatefulWidget {
+class Catdtls extends StatelessWidget {
 
-  var _catagorisbook;
-  Catdtls(this._catagorisbook);
+final DocumentSnapshot documentSnapshot;
+
+  const Catdtls({Key? key, required this.documentSnapshot}) : super(key: key);
 
 
-  @override
-  State<Catdtls> createState() => _CatdtlsState();
-}
-
-class _CatdtlsState extends State<Catdtls> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       body: ListView(
         children: [
           Stack(
@@ -54,7 +51,7 @@ class _CatdtlsState extends State<Catdtls> {
                     height: 100,
                   
                     color: Colors.red,
-                    child: Image.asset("images/newarrivel1.jpg",fit: BoxFit.cover,),
+                    child: Image.network(documentSnapshot['image'],fit: BoxFit.cover,),
                     
               ),
                 )),
@@ -71,7 +68,7 @@ class _CatdtlsState extends State<Catdtls> {
                  SizedBox(
               height: 10,
             ),
-                Text("Lorem Ipsum is simply",style: TextStyle(fontSize: 20),),
+                Text(documentSnapshot["name"],style: TextStyle(fontSize: 20),),
                  SizedBox(
               height: 10,
             ),
