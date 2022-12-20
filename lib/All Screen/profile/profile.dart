@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:story_book/All%20Screen/profile/edit_profile.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -53,7 +55,7 @@ class _ProfileState extends State<Profile> {
                         SizedBox(
                           width: 25,
                         ),
-                        Text("Fatema Koli"),]
+                        Text(""),]
 
           ),
                   ),
@@ -71,7 +73,7 @@ class _ProfileState extends State<Profile> {
           child: Column(
           children: [
           Text("Address:"),
-   Text("Adabor 16,Road -16,House-12,Dhaka 1207 ",textAlign: TextAlign.center,),
+   Text(" ",textAlign: TextAlign.center,),
 
    
           ],
@@ -94,7 +96,7 @@ class _ProfileState extends State<Profile> {
                         SizedBox(
                           width: 10,
                         ),
-                        Text("01302607702"),
+                        Text(""),
                       ],
                     ),
                   ),
@@ -109,8 +111,12 @@ class _ProfileState extends State<Profile> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  
+                  MaterialButton(onPressed: (){
+                            
+                            Get.to(EditProfile());
 
-                  MaterialButton(onPressed: (){},
+                  },
                   child: Text("Edit"),
                   color: Colors.green,
                   

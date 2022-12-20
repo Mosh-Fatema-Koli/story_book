@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_book/Auth/reg.dart';
 import 'package:story_book/widget/customtextfield.dart';
+import 'package:story_book/widget/toast.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,8 +27,10 @@ class _LoginPageState extends State<LoginPage> {
       } on FirebaseAuthException catch (e) {
         if (e.code == 'user-not-found') {
           print('No user found for that email.');
+          return showInToast("user-not-found");
         } else if (e.code == 'wrong-password') {
           print('Wrong password provided for that user.');
+          return showInToast("Wrong password provided for that user.");
         }
       }
   }
@@ -92,7 +95,6 @@ class _LoginPageState extends State<LoginPage> {
                 hintText: "Enter your Email",
               ),
               CustomTextField(
-                
                 controller: passwordController,
                 hintText: "Enter your password",
               ),
@@ -102,6 +104,7 @@ class _LoginPageState extends State<LoginPage> {
               ElevatedButton(
                 onPressed: () {
                  SignIN();
+                 
                 },
                 child: Text("Log In"),
               ),

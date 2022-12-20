@@ -39,6 +39,7 @@ dependencies:
   google_fonts:
   get:
   gap:
+  fluttertoast: ^8.1.2
 
 
   

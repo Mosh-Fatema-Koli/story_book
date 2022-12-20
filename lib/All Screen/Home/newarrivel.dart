@@ -20,24 +20,25 @@ class NewArrivelScreen extends StatelessWidget {
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 2.0,
-          mainAxisSpacing: 2.0
+          mainAxisSpacing: 3.0
       ),
       itemBuilder: (BuildContext context, int index){
 
         final DocumentSnapshot documentSnapshot = snapshot.data!.docs[index];
 
         return Padding(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(10),
           child: GestureDetector(
             onTap: () {
               Get.to(Catdtls( documentSnapshot: documentSnapshot,));
             },
             child: Container(
-              height: 200,
-              color: Colors.amber,
+              height: 300,
+              width: 250,
+            
              child: Column(
                children: [
-                 Image.network(documentSnapshot['image'],fit: BoxFit.cover,),
+                 Image.network(documentSnapshot['image'],fit:BoxFit.fitWidth,height: 158,width: 250, ),
                  Center(child: Text(documentSnapshot["name"])),
                ],
              ),
