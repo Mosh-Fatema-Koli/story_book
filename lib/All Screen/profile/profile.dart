@@ -28,7 +28,7 @@ class _ProfileState extends State<Profile> {
             children: [
 
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               Text("Profile",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
               SizedBox(

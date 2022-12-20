@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:story_book/widget/customtextfield.dart';
 
 class EditProfile extends StatefulWidget {
@@ -52,7 +53,7 @@ class _EditProfileState extends State<EditProfile> {
                   SizedBox(width: 10,),
 
                   MaterialButton(onPressed: (){
-                   
+                   Get.back();
                   },
                   child: Text("Cancel"),
                   color: Colors.red,
