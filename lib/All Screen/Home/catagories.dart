@@ -27,7 +27,7 @@ class CatagoriesScreen extends StatelessWidget {
                   width: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.red,
+
                    
 
                   ),

@@ -16,7 +16,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 5), () => Get.to(WidgetTree()));
+    Future.delayed(Duration(seconds: 3), () => Get.to(WidgetTree()));
     return Scaffold(
      
       body: Center(
@@ -33,12 +33,12 @@ class _SplashPageState extends State<SplashPage> {
             Text(
               "Story Book",
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 22),
+              style: TextStyle(color: Colors.black, fontSize: 22),
             ),
             Gap(5),
             Text(
               "Powered By FK Ltd.",
-              style: TextStyle(color: Colors.white, fontSize: 9),
+              style: TextStyle(color: Colors.black, fontSize: 9),
             )
           ],
         ),

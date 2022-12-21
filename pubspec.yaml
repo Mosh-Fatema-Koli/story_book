@@ -40,6 +40,7 @@ dependencies:
   get:
   gap:
   fluttertoast: ^8.1.2
+  flutter_launcher_icons: ^0.11.0
 
 
   

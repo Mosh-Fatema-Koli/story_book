@@ -25,17 +25,23 @@ class PopularScreen extends StatelessWidget {
               children: [
                 Container(
                   height: 200,
-                  width: 100,
+                  width: 150,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.red,
+
                    
 
                   ),
-                  child: Image.network(snapshot.data!.docs[index]['image'],fit: BoxFit.cover,),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+
+                      child: Image.network(snapshot.data!.docs[index]['image'],fit: BoxFit.cover,)),
 
                 ),
-                Text(snapshot.data!.docs[index]['name']),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(snapshot.data!.docs[index]['name'],style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),),
               ],
             ),
           ),

@@ -27,7 +27,7 @@ final DocumentSnapshot documentSnapshot;
                 left: 0,
                 child: Container(
                   height: 100,
-                  color: Colors.amber,
+                  color: Colors.blueAccent,
                   
               )),
 
@@ -50,7 +50,7 @@ final DocumentSnapshot documentSnapshot;
                     width: 100,
                     height: 100,
                   
-                    color: Colors.red,
+
                     child: Image.network(documentSnapshot['image'],fit: BoxFit.cover,),
                     
               ),
