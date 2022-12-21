@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:story_book/Auth/reg.dart';
+import 'package:story_book/Route/nav.dart';
 import 'package:story_book/widget/customtextfield.dart';
 import 'package:story_book/widget/toast.dart';
 
@@ -17,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  SignIN() async {
+ /* SignIN() async {
 
     try {
         final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -33,6 +36,33 @@ class _LoginPageState extends State<LoginPage> {
           return showInToast("Wrong password provided for that user.");
         }
       }
+  }*/
+  signIn()async{
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      var authCredential = userCredential.user;
+      print(authCredential!.uid);
+      if(authCredential.uid.isNotEmpty){
+        Navigator.push(context, CupertinoPageRoute(builder: (_)=>NavScreen()));
+      }
+      else{
+        Fluttertoast.showToast(msg: "Something is wrong");
+      }
+
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        Fluttertoast.showToast(msg: "No user found for that email.");
+
+      } else if (e.code == 'wrong-password') {
+        Fluttertoast.showToast(msg: "Wrong password provided for that user.");
+
+      }
+    } catch (e) {
+      print(e);
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -103,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                 SignIN();
+                  signIn();
                  
                 },
                 child: Text("Log In"),
