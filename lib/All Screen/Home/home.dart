@@ -5,9 +5,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:banner_carousel/banner_carousel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:story_book/All%20Screen/Home/catagories.dart';
 import 'package:story_book/All%20Screen/Home/newarrivel.dart';
 import 'package:story_book/All%20Screen/Home/popular.dart';
+import 'package:story_book/All%20Screen/search/book_search.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -42,13 +45,20 @@ class HomeScreen extends StatelessWidget {
 
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                focusedBorder: OutlineInputBorder(
+                  borderSide:
+                  BorderSide(width: 3, color: Colors.blueAccent), //<-- SEE HERE
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
                 enabledBorder: OutlineInputBorder(
                   borderSide:
                   BorderSide(width: 3, color: Colors.blueAccent), //<-- SEE HERE
                   borderRadius: BorderRadius.circular(50.0),
                 ),
                 hintText: "Search",
-                suffixIcon: IconButton(onPressed: (){},icon: Icon(Icons.search),)
+                suffixIcon: IconButton(onPressed: (){
+                  Get.to(SearchPage());
+                },icon: Icon(Icons.search),)
               ),
             ),
           ),
@@ -79,14 +89,8 @@ class HomeScreen extends StatelessWidget {
               height: 250,
               child: PopularScreen()),
 
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Text("New Arrivel",style: TextStyle(fontSize: 20),),
-          ),
-          Container(
-            height: 500,
-            child: NewArrivelScreen(),
-          )
+
+
 
 
         ],

@@ -22,7 +22,7 @@ class _CatPageState extends State<CatPage> {
 
           Padding(
             padding: const EdgeInsets.all(15),
-            child: Center(child: Text("All Categories",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red),)),
+            child: Center(child: Text("All Categories Books",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red),)),
           ),
             Container(
             height: MediaQuery.of(context).size.height,

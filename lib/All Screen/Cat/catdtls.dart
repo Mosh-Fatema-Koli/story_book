@@ -27,7 +27,7 @@ final DocumentSnapshot documentSnapshot;
                 left: 0,
                 child: Container(
                   height: 100,
-                  color: Colors.amber,
+                  color: Colors.blueAccent,
                   
               )),
 
@@ -47,10 +47,10 @@ final DocumentSnapshot documentSnapshot;
                 left: 0,
                 child: Center(
                   child: Container(
-                    width: 100,
-                    height: 100,
+                    width: 150,
+                    height: 150,
                   
-                    color: Colors.red,
+
                     child: Image.network(documentSnapshot['image'],fit: BoxFit.cover,),
                     
               ),
@@ -68,11 +68,11 @@ final DocumentSnapshot documentSnapshot;
                  SizedBox(
               height: 10,
             ),
-                Text(documentSnapshot['name'],style: TextStyle(fontSize: 20),),
+                Text(documentSnapshot['name'],style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blue),),
                  SizedBox(
               height: 10,
             ),
-                Text(documentSnapshot['description'])
+                Text(documentSnapshot['description'],style: TextStyle(fontSize: 16,color: Colors.grey[800]),)
               ],
             ),
           )

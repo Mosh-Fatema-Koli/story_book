@@ -19,28 +19,8 @@ class _ProfileState extends State<Profile> {
   signOut() async {
     await FirebaseAuth.instance.signOut();
   }
-
-  void getUser() async {
-    String name;
-    String address;
-    String email;
-    String pnone_no;
-
-    User? user =await FirebaseAuth.instance.currentUser;
-    final userData= FirebaseFirestore.instance.collection("profile").doc().get();
-    setState(() {
-
-  
-      
-    });
-  }
-
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getUser();
-  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(

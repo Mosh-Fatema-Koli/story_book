@@ -158,11 +158,11 @@ class _RegPageState extends State<RegPage> {
              child: Text("Sign Up"),
            ),
            SizedBox(
-             height: 5,
+             height: 10,
            ),
            Text("Or",style: TextStyle(color: Colors.white),),
            SizedBox(
-             height: 5,
+             height: 10,
            ),
            InkWell(
              onTap: () {
@@ -170,7 +170,7 @@ class _RegPageState extends State<RegPage> {
              },
              child: Text(
                  "Login",
-                 style: TextStyle(fontWeight: FontWeight.bold,color:Colors.white ),
+                 style: TextStyle(fontWeight: FontWeight.bold,color:Colors.white ,fontSize: 18),
              ),
            ),
                    ],

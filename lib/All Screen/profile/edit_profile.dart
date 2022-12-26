@@ -20,11 +20,14 @@ class _EditProfileState extends State<EditProfile> {
          child: Column(
           children: [
             Gap(50),
+            Text("Update Your profile",textAlign: TextAlign.center,),
+            Gap(20),
              Container(
-              height: 200,
-              width: 200,
-              color: Colors.blueAccent,
-             ),
+                  height: 150,
+                  width: 150,
+               
+                  child: Image.asset("images/profile.png"),
+                ),
              Gap(10),
               CustomTextField(
                 hintText: "Name",

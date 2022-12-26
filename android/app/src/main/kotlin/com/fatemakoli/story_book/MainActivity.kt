@@ -1,4 +1,4 @@
-package com.example.story_book
+package com.fatemakoli.story_book
 
 import io.flutter.embedding.android.FlutterActivity
 
