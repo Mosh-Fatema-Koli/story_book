@@ -54,7 +54,7 @@ class _NavScreenState extends State<NavScreen> {
 
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.blueAccent,
         onTap: _onItemTapped,
       ),
     );

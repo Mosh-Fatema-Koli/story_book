@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:story_book/All%20Screen/Cat/catdtls.dart';
-import 'package:story_book/All%20Screen/Home/newarrivel.dart';
+import 'package:story_book/All%20Screen/Cat/newarrivel.dart';
 
 class CatPage extends StatefulWidget {
   const CatPage({super.key});
@@ -22,7 +22,7 @@ class _CatPageState extends State<CatPage> {
 
           Padding(
             padding: const EdgeInsets.all(15),
-            child: Center(child: Text("All Categories Books",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.red),)),
+            child: Center(child: Text("All Categories Books",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.blueAccent),)),
           ),
             Container(
             height: MediaQuery.of(context).size.height,

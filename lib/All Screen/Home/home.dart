@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:story_book/All%20Screen/Home/catagories.dart';
-import 'package:story_book/All%20Screen/Home/newarrivel.dart';
+import 'package:story_book/All%20Screen/Cat/newarrivel.dart';
 import 'package:story_book/All%20Screen/Home/popular.dart';
 import 'package:story_book/All%20Screen/search/book_search.dart';
 
