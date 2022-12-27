@@ -13,6 +13,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
       backgroundColor: Colors.blueAccent,
 
@@ -24,7 +25,8 @@ class _SearchPageState extends State<SearchPage> {
             child: Container(
               child: Text("No Result Found",style: TextStyle(fontSize: 20,color: Colors.lightBlueAccent,fontWeight: FontWeight.bold),),
             ),
-          )
+          ),
+          Image.asset("images/no result.png")
         ],
       ),
     );
