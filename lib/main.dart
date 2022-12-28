@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:story_book/All%20Screen/Cat/catdtls.dart';
 import 'package:story_book/Route/route.dart';
 import 'package:story_book/Route/splash.dart';
 
@@ -34,7 +35,9 @@ class MyApp extends StatelessWidget {
 
       initialRoute: splash,
       getPages: getPages,
-      home: SplashPage(),
+     home: SplashPage(),
+
+
       debugShowCheckedModeBanner: false,
     );
   }

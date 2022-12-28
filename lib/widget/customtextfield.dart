@@ -72,7 +72,7 @@ class CustomTextField extends StatelessWidget {
               width: 1,
             ),
           ),
-          labelText: hintText,
+          //labelText: hintText,
           hintStyle: myStyle(12, Colors.black54),
           suffixIcon: suffixIcon,
           prefixIcon: icon,

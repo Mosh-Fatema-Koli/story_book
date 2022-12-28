@@ -4,15 +4,15 @@ import 'package:get/get.dart';
 import 'package:story_book/All%20Screen/Cat/comment.dart';
 import 'package:story_book/All%20Screen/Cat/newarrivel.dart';
 import 'package:story_book/All%20Screen/Cat/rating.dart';
+import 'package:story_book/widget/customtextfield.dart';
 
 class Catdtls extends StatelessWidget {
 
 final DocumentSnapshot documentSnapshot;
 
-  const Catdtls({Key? key, required this.documentSnapshot}) : super(key: key);
+ Catdtls({Key? key, required this.documentSnapshot}) : super(key: key);
 
-
-  @override
+@override
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
@@ -100,15 +100,8 @@ final DocumentSnapshot documentSnapshot;
                   height: 10,
                 ),
 
-                MaterialButton(onPressed: (){
-                  Get.to(CommentPage());
-                },child: Text("Add Comment",),color: Colors.amber,
-    minWidth: MediaQuery.of(context).size.width, ),
 
-                MaterialButton(onPressed: (){
-                  Get.to(RatingPage());
-                },child: Text("Rating",),color: Colors.pink,
-                  minWidth: MediaQuery.of(context).size.width, )
+                CommentRatting()
 
               ],
             ),

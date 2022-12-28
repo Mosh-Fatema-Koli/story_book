@@ -12,6 +12,36 @@ class RatingPage extends StatefulWidget {
 class _RatingPageState extends State<RatingPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Container(
+      height: 150,
+      width: 300,
+      color: Colors.white,
+      child: Column(
+        children: [
+          Text("Rating",style: TextStyle(fontSize: 20),),
+
+
+          SizedBox(
+            height: 20,
+          ),
+          Divider(
+            indent: 1,
+            endIndent: 1,
+            color: Colors.grey,
+            height: 2,
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              IconButton(onPressed: (){}, icon: Icon(Icons.star,size: 40,color: Colors.amberAccent,),)
+
+            ],
+          ),
+          
+        ],
+      ),
+    );
   }
 }
